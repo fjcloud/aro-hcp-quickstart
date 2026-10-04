@@ -7,7 +7,7 @@ The cluster has a private API, a public console, and two `Standard_D8s_v3` worke
 ## Prerequisites
 
 - `az login` against the subscription that should own the cluster
-- The [aro-hcp](https://aka.ms/aro-hcp-cli) CLI extension
+- The [ARO HCP CLI extension](https://learn.microsoft.com/en-us/azure/openshift/quickstart-create-default-hosted-cluster?pivots=aro-az-cli#aro-hcp-cli-extension)
 - Permission to create Entra app registrations in that tenant
 - A Red Hat pull secret containing `registry.redhat.io` and `registry.connect.redhat.com`
 

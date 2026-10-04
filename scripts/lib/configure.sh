@@ -142,11 +142,13 @@ json.dump([
         "client-id": console_id,
         "type": "Confidential",
         "component": {"name": "console", "auth-client-namespace": "openshift-console"},
+        "extra-scopes": ["email", "profile"],
     },
     {
         "client-id": cli_id,
         "type": "Public",
         "component": {"name": "cli", "auth-client-namespace": "openshift-console"},
+        "extra-scopes": ["email", "profile"],
     },
 ], open(clients, "w"))
 PY
