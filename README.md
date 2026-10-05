@@ -9,7 +9,7 @@ The cluster has a private API, a public console, and two `Standard_D8s_v3` worke
 - `az login` against the subscription that should own the cluster
 - The [ARO HCP CLI extension](https://learn.microsoft.com/en-us/azure/openshift/quickstart-create-default-hosted-cluster?pivots=aro-az-cli#aro-hcp-cli-extension)
 - Permission to create Entra app registrations in that tenant
-- A Red Hat pull secret containing `registry.redhat.io` and `registry.connect.redhat.com`
+- A Red Hat pull secret containing `registry.redhat.io`, `registry.connect.redhat.com`, and `cloud.openshift.com` (Insights)
 
 The pull secret is read from `~/pull_secret.json`. Override the path with `PULL_SECRET_FILE`. It is not written into this repository.
 

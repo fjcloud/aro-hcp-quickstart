@@ -41,10 +41,11 @@ import json, sys
 src, dest = sys.argv[1], sys.argv[2]
 auths = json.load(open(src)).get("auths", {})
 keep = {}
-for name in ("registry.redhat.io", "registry.connect.redhat.com", "quay.io"):
+required = ("registry.redhat.io", "registry.connect.redhat.com", "cloud.openshift.com")
+for name in required + ("quay.io",):
     if name in auths:
         keep[name] = auths[name]
-missing = [name for name in ("registry.redhat.io", "registry.connect.redhat.com") if name not in keep]
+missing = [name for name in required if name not in keep]
 if missing:
     sys.exit("pull secret is missing: " + ", ".join(missing))
 json.dump({"auths": keep}, open(dest, "w"))
@@ -219,7 +220,7 @@ except Exception:
     print("")' || true)
   echo "registries=${{regs:-none}} try=$i"
   case "$regs" in
-    *registry.redhat.io*) break ;;
+    *cloud.openshift.com*registry.redhat.io*) break ;;
   esac
   sleep 10
 done
